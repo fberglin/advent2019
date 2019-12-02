@@ -18,13 +18,12 @@ print "Total fuel needed: $totalFuel\n";
 
 sub calculateFuelNeeded(@) {
     my $mass = shift;
-    my $totalFuel = 0;
     my $fuel = int($mass / 3) - 2;
 
     if ($fuel <= 0) {
         return 0;
     }
 
-    return $totalFuel + $fuel + calculateFuelNeeded($fuel);
+    return $fuel + calculateFuelNeeded($fuel);
 }
 
