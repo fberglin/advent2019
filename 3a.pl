@@ -41,7 +41,7 @@ foreach $p (keys %grid) {
 
 print "Min distance: $minDistance\n";
 
-exit;
+# exit;
 
 $minX = 1e6;
 $minY = 1e6;
@@ -56,7 +56,9 @@ foreach $p (keys %grid) {
     if ($y > $maxY) { $maxY = $y; };
 }
 
-# print "$minX,$minY : $maxX,$maxY\n";
+print "Grid size: $minX,$minY : $maxX,$maxY\n";
+
+exit;
 
 for ($y=$maxY; $y>=$minY; $y--) {
     for ($x=$minX; $x<=$maxX; $x++) {
@@ -68,8 +70,6 @@ for ($y=$maxY; $y>=$minY; $y--) {
     }
     print "\n";
 }
-
-print "Min distance: $minDistance\n";
 
 sub fillGrid(@) {
     my $grid = shift;
